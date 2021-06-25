@@ -1,0 +1,45 @@
+.header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  .header__logo-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .header__logo {
+      margin-right: 10px;
+    }
+
+    .header__name {
+      color: $black;
+      font-size: 1.25rem;
+    }
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+
+    .header__nav__item {
+      cursor: pointer;
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    .header__nav__item:not(:last-of-type) {
+      margin-right: 40px;
+    }
+  }
+
+  .header__buttons {
+    display: flex;
+
+    button:nth-of-type(1) {
+      margin-right: 30px;
+    }
+  }
+}

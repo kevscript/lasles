@@ -1,0 +1,58 @@
+.button-primary {
+  cursor: pointer;
+  min-width: 250px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0;
+  background: $red;
+  border-radius: 10px;
+}
+
+.button-secondary {
+  cursor: pointer;
+  min-width: 150px;
+  height: 45px;
+  border: 1px solid $red;
+  color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background: transparent;
+
+  &:hover {
+    background: $red;
+    color: #fff;
+  }
+}
+
+.button-circle {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: 2px solid $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+
+  &:hover {
+    background: $red;
+    color: #fff;
+  }
+}
+
+.button-ternary {
+  cursor: pointer;
+  border: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+}

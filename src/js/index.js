@@ -18,3 +18,6 @@ import "../assets/twitter.svg";
 import "../assets/avatar1.png";
 import "../assets/avatar2.png";
 import "../assets/avatar3.png";
+import "../assets/user.svg";
+import "../assets/location.svg";
+import "../assets/server.svg";

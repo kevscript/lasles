@@ -1,0 +1,32 @@
+.hero {
+  display: flex;
+  margin-top: 100px;
+
+  .hero__content {
+    z-index: 2;
+    margin-top: 20px;
+
+    h2 {
+      max-width: 555px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 555px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .hero__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

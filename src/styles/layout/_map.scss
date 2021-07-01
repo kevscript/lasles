@@ -1,0 +1,57 @@
+.section-map {
+  background: #fff;
+  padding: 150px 0 110px;
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 20px;
+    max-width: 385px;
+  }
+
+  p {
+    max-width: 555px;
+  }
+
+  .map__img-container {
+    width: 100%;
+    margin-top: 155px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .map__brands {
+    width: 100%;
+    display: flex;
+    margin-top: 80px;
+
+    .map__brand-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 60px;
+
+      img {
+        display: block;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 47.5px;
+      }
+    }
+  }
+}

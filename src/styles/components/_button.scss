@@ -42,10 +42,24 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
+  background: transparent;
+
+  svg {
+    path {
+      fill: $red;
+    }
+    fill: $red;
+  }
 
   &:hover {
     background: $red;
     color: #fff;
+    svg {
+      path {
+        fill: #fff;
+      }
+      fill: #fff;
+    }
   }
 }
 

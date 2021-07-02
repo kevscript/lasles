@@ -38,7 +38,6 @@
     margin-top: 80px;
 
     .map__brand-container {
-      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,6 +46,7 @@
 
       img {
         display: block;
+        width: 100%;
       }
 
       &:not(:last-of-type) {

@@ -1,5 +1,5 @@
 .section-testimonials {
-  padding-top: 75px;
+  padding: 75px 0 65px;
 }
 
 .testimonials {
@@ -22,9 +22,11 @@
   }
 
   .testimonials__list {
-    position: absolute;
     display: flex;
     margin-top: 60px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 500%;
 
     .testimonial {
       padding: 30px;
@@ -36,7 +38,7 @@
       .testimonial__header {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 4px;
 
         .testimonial__avatar-container {
           display: flex;
@@ -80,6 +82,37 @@
 
       &:not(:last-of-type) {
         margin-right: 50px;
+      }
+    }
+  }
+
+  .testimonials__actions {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .testimonials__markers {
+      display: flex;
+
+      .testimonials__marker {
+        width: 15px;
+        height: 15px;
+        background: $grey;
+        border-radius: 100%;
+        margin-right: 15px;
+      }
+    }
+
+    .testimonials__buttons {
+      display: flex;
+
+      button {
+        margin-left: 20px;
+
+        &:first-of-type {
+          transform: rotate(180deg);
+        }
       }
     }
   }

@@ -1,0 +1,26 @@
+.section-subscription {
+  background: $white-smoke;
+  box-shadow: 0px 134px 0px 0px #fff inset;
+}
+
+.subscription {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 70px;
+  box-shadow: 0px 18px 113px -30px rgba(0, 0, 0, 0.1);
+
+  .subscription__text {
+    h3 {
+      max-width: 372px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 410px;
+    }
+  }
+}

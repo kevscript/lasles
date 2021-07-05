@@ -96,11 +96,19 @@
       display: flex;
 
       .testimonials__marker {
+        transition: 0.3s all linear;
         width: 15px;
         height: 15px;
         background: $grey;
         border-radius: 100%;
         margin-right: 15px;
+      }
+
+      .marker-active {
+        transition: 0.3s all linear;
+        width: 45px;
+        background: $red;
+        border-radius: 7.5px;
       }
     }
 

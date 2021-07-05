@@ -11,6 +11,13 @@
   background: $red;
   border-radius: 10px;
   color: #fff;
+  transition: 0.15s all linear;
+  box-shadow: 0px 26px 50px -8px rgba($red, 0.36);
+
+  &:hover {
+    transition: 0.15s all linear;
+    box-shadow: 0px 26px 54px -8px rgba($red, 0.8);
+  }
 }
 
 .button-secondary {
@@ -26,10 +33,13 @@
   font-weight: bold;
   border-radius: 50px;
   background: transparent;
+  transition: 0.15s all linear;
 
   &:hover {
     background: $red;
     color: #fff;
+    transition: 0.15s all linear;
+    box-shadow: 0px 10px 40px -8px rgba($red, 0.36);
   }
 }
 
@@ -43,6 +53,7 @@
   align-items: center;
   border-radius: 100%;
   background: transparent;
+  transition: 0.15s all linear;
 
   svg {
     path {
@@ -52,6 +63,7 @@
   }
 
   &:hover {
+    transition: 0.15s all linear;
     background: $red;
     color: #fff;
     svg {

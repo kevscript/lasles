@@ -23,3 +23,5 @@ import "../assets/location.svg";
 import "../assets/server.svg";
 import "../assets/check.svg";
 import "../assets/check2.svg";
+
+import "./testimonials";

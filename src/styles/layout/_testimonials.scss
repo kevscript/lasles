@@ -22,18 +22,21 @@
   }
 
   .testimonials__list {
+    transition: 0.3s all ease-out;
     display: flex;
+    position: absolute;
     margin-top: 60px;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 500%;
 
     .testimonial {
+      transition: 0.3s all linear;
       padding: 30px;
       border: 2px solid #dddddd;
       border-radius: 10px;
       width: 400px;
       height: 230px;
+      overflow: hidden;
 
       .testimonial__header {
         display: flex;
@@ -84,10 +87,15 @@
         margin-right: 50px;
       }
     }
+
+    .testimonial-active {
+      transition: 0.3s all linear;
+      border: 2px solid $red;
+    }
   }
 
   .testimonials__actions {
-    margin-top: 60px;
+    margin-top: 360px;
     display: flex;
     justify-content: space-between;
     align-items: center;

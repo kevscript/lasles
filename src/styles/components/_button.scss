@@ -62,7 +62,7 @@
     fill: $red;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     transition: 0.15s all linear;
     background: $red;
     color: #fff;
@@ -72,6 +72,10 @@
       }
       fill: #fff;
     }
+  }
+
+  &:disabled {
+    opacity: 0.6;
   }
 }
 

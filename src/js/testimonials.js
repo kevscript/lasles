@@ -3,82 +3,104 @@ let testimonials = document.querySelectorAll(".testimonial");
 let markers = document.querySelectorAll(".testimonials__marker");
 let [prev, next] = document.querySelectorAll(".testimonials__buttons button");
 
+// representation of the default container state
+// original poosition = 0
 let containerPosition = 0;
 
-prev.addEventListener("click", () => {
-  // get current active testimonial
+// if first testimonial is active, disables prev button, otherwise enables
+// if last testimonial is active, disables next button, otherwise enables
+function handleButtonState() {
+  if (testimonials[0].classList.contains("testimonial-active")) {
+    prev.disabled = true;
+  } else {
+    prev.disabled = false;
+  }
+  if (
+    testimonials[testimonials.length - 1].classList.contains(
+      "testimonial-active",
+    )
+  ) {
+    next.disabled = true;
+  } else {
+    next.disabled = false;
+  }
+}
+
+// initial buttons state setter
+handleButtonState();
+
+function getCurrentActiveTestimonialIndex(testimonials) {
   const currentActiveTestimonialIndex = [...testimonials].findIndex((t) =>
     t.classList.contains("testimonial-active"),
   );
+  return currentActiveTestimonialIndex;
+}
 
-  // if first testimonial is active, make last one active
-  // else make previous testimonial active
-  if (currentActiveTestimonialIndex === 0) {
-    // remove active class from active testimonial and marker
-    testimonials[currentActiveTestimonialIndex].classList.remove(
-      "testimonial-active",
+function handleTestimonialState(
+  direction,
+  currentIndex,
+  testimonials,
+  markers,
+) {
+  if (direction === "prev") {
+    // remove active class from current testimonial and marker
+    testimonials[currentIndex].classList.remove("testimonial-active");
+    markers[currentIndex].classList.remove("marker-active");
+
+    // add active class to prev testimonial and marker
+    testimonials[currentIndex - 1].classList.add("testimonial-active");
+    markers[currentIndex - 1].classList.add("marker-active");
+  }
+
+  if (direction === "next") {
+    // remove active class from current testimonial and marker
+    testimonials[currentIndex].classList.remove("testimonial-active");
+    markers[currentIndex].classList.remove("marker-active");
+
+    // add active class to next testimonial and marker
+    testimonials[currentIndex + 1].classList.add("testimonial-active");
+    markers[currentIndex + 1].classList.add("marker-active");
+  }
+}
+
+prev.addEventListener("click", () => {
+  // get current active testimonial
+  const currentActiveTestimonialIndex =
+    getCurrentActiveTestimonialIndex(testimonials);
+  // if current testimonial is not already the first, make previous active
+  if (currentActiveTestimonialIndex !== 0) {
+    handleTestimonialState(
+      "prev",
+      currentActiveTestimonialIndex,
+      testimonials,
+      markers,
     );
-    markers[currentActiveTestimonialIndex].classList.remove("marker-active");
-
-    // add active class to new testimonial and marker
-    testimonials[testimonials.length - 1].classList.add("testimonial-active");
-    markers[markers.length - 1].classList.add("marker-active");
-
-    containerPosition = containerPosition - 450 * 4;
-    container.style.transform = `translateX(${containerPosition}px)`;
-  } else {
-    // remove active class from active testimonial and marker
-    testimonials[currentActiveTestimonialIndex].classList.remove(
-      "testimonial-active",
-    );
-    markers[currentActiveTestimonialIndex].classList.remove("marker-active");
-
-    // add active class to new testimonial and marker
-    testimonials[currentActiveTestimonialIndex - 1].classList.add(
-      "testimonial-active",
-    );
-    markers[currentActiveTestimonialIndex - 1].classList.add("marker-active");
-
+    // get testimonial into view by moving container
+    // 450px is the width of a testimonial
     containerPosition = containerPosition + 450;
     container.style.transform = `translateX(${containerPosition}px)`;
   }
+  // check if we need to enable/disable a button
+  handleButtonState();
 });
 
 next.addEventListener("click", () => {
   // get current active testimonial
-  const currentActiveTestimonialIndex = [...testimonials].findIndex((t) =>
-    t.classList.contains("testimonial-active"),
-  );
-
-  // if last testimonial is active, make first one active
-  // else make next testimonial active
-  if (currentActiveTestimonialIndex === testimonials.length - 1) {
-    // remove active class from active testimonial and marker
-    testimonials[currentActiveTestimonialIndex].classList.remove(
-      "testimonial-active",
+  const currentActiveTestimonialIndex =
+    getCurrentActiveTestimonialIndex(testimonials);
+  // if not at last testimonial, make next one active
+  if (currentActiveTestimonialIndex !== testimonials.length - 1) {
+    handleTestimonialState(
+      "next",
+      currentActiveTestimonialIndex,
+      testimonials,
+      markers,
     );
-    markers[currentActiveTestimonialIndex].classList.remove("marker-active");
-
-    // add active class to new testimonial and marker
-    testimonials[0].classList.add("testimonial-active");
-    markers[0].classList.add("marker-active");
-
-    containerPosition = containerPosition + 450 * 4;
-    container.style.transform = `translateX(${containerPosition}px)`;
-  } else {
-    // remove active class from active testimonial and marker
-    testimonials[currentActiveTestimonialIndex].classList.remove(
-      "testimonial-active",
-    );
-    markers[currentActiveTestimonialIndex].classList.remove("marker-active");
-
-    // add active class to new testimonial and marker
-    testimonials[currentActiveTestimonialIndex + 1].classList.add(
-      "testimonial-active",
-    );
-    markers[currentActiveTestimonialIndex + 1].classList.add("marker-active");
-
+    // get testimonial into view by moving container
+    // 450px is the width of a testimonial
     containerPosition = containerPosition - 450;
     container.style.transform = `translateX(${containerPosition}px)`;
   }
+  // check if we need to enable/disable a button
+  handleButtonState();
 });

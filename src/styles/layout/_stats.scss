@@ -48,3 +48,29 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .stats {
+    height: 150px;
+    .stats__list {
+      .stats__item {
+        height: 100px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        .stats__icon {
+          margin-right: 0;
+          margin-bottom: 10px;
+          width: 35px;
+          height: 35px;
+        }
+        .stats__content {
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

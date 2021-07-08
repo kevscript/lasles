@@ -93,3 +93,58 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .plans {
+    .plans__list {
+      flex-direction: column;
+
+      .plan__item {
+        padding: 50px 30px;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        border-radius: 5px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+
+        .plan__top {
+          .plan__img-container {
+            display: none;
+          }
+
+          h5 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+          }
+
+          .plan__features {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            .plan__feature {
+              border-radius: 3px;
+              margin: 5px;
+              border: 1px solid $grey;
+              padding: 5px 8px;
+              background: $white-smoke;
+              img {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        .plan__price {
+          h4 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

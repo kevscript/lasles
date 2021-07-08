@@ -24,3 +24,14 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .subscription {
+    flex-direction: column;
+    text-align: center;
+
+    .subscription__text {
+      margin-bottom: 30px;
+    }
+  }
+}

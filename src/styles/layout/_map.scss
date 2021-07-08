@@ -36,13 +36,14 @@
     width: 100%;
     display: flex;
     margin-top: 80px;
-
+    justify-content: center;
     .map__brand-container {
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       height: 60px;
+      width: 150px;
 
       img {
         display: block;
@@ -51,6 +52,38 @@
 
       &:not(:last-of-type) {
         margin-right: 47.5px;
+      }
+
+      &:nth-of-type(3) {
+        img {
+          width: 150%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-map {
+    padding: 100px 0 50px;
+  }
+
+  .map {
+    .map__img-container {
+      margin-top: 50px;
+    }
+
+    .map__brands {
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+
+      .map__brand-container {
+        margin: 10px 0;
+        width: 125px;
+        &:not(:last-of-type) {
+          margin-right: 0;
+        }
       }
     }
   }

@@ -25,3 +25,4 @@ import "../assets/check.svg";
 import "../assets/check2.svg";
 
 import "./testimonials";
+import "./navigation";

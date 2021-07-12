@@ -133,3 +133,28 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .testimonials {
+    .testimonials__list {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .testimonial {
+        width: 100%;
+        margin: 0 0 30px 0;
+        height: auto;
+        min-height: 230px;
+
+        &:not(:last-of-type) {
+          margin-right: 0;
+        }
+      }
+    }
+    .testimonials__actions {
+      display: none;
+    }
+  }
+}

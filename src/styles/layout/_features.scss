@@ -78,12 +78,10 @@
 
       .features__list {
         display: flex;
-        align-items: center;
         flex-direction: column;
 
         .features__item {
           display: flex;
-          align-items: center;
           height: 30px;
 
           svg {
@@ -105,6 +103,10 @@
 
 @media (max-width: 768px) {
   .features {
-    margin: 50px 90px;
+    margin: 50px 0px;
+
+    .features__content {
+      width: 100%;
+    }
   }
 }

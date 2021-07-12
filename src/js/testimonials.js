@@ -63,6 +63,7 @@ function handleTestimonialState(
   }
 }
 
+// clicking on previous button
 prev.addEventListener("click", () => {
   // get current active testimonial
   const currentActiveTestimonialIndex =
@@ -84,6 +85,7 @@ prev.addEventListener("click", () => {
   handleButtonState();
 });
 
+// clicking on next button
 next.addEventListener("click", () => {
   // get current active testimonial
   const currentActiveTestimonialIndex =
@@ -104,3 +106,30 @@ next.addEventListener("click", () => {
   // check if we need to enable/disable a button
   handleButtonState();
 });
+
+// reseting testimonials to initial state if view width < 500px
+function resetTestimonials() {
+  // if view < 500px && testimonials not already in initial state
+  if (
+    window.innerWidth <= 500 &&
+    !testimonials[0].classList.contains("testimonial-active")
+  ) {
+    const currentActiveTestimonialIndex =
+      getCurrentActiveTestimonialIndex(testimonials);
+
+    testimonials[currentActiveTestimonialIndex].classList.remove(
+      "testimonial-active",
+    );
+    markers[currentActiveTestimonialIndex].classList.remove("marker-active");
+    testimonials[0].classList.add("testimonial-active");
+    markers[0].classList.add("marker-active");
+
+    handleButtonState();
+
+    containerPosition = 0;
+    container.style.transform = `translateX(${0}px)`;
+  }
+}
+
+// check if testimonials needs reset
+window.addEventListener("resize", () => resetTestimonials());
